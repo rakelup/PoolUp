@@ -8,9 +8,13 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".Launcher">
 
-    <TextView
-        android:text="@string/hello_world"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/launcher_image_car"
+        android:src="@drawable/car_icon"
+        android:layout_height="30dp"
+        android:layout_width="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+    </ImageView>
 
 </RelativeLayout>

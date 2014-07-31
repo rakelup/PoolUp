@@ -1,11 +1,14 @@
 package poolup.penguins.chocolate.com.poolup;
 
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.graphics.Picture;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 
 public class Launcher extends Activity {
@@ -14,7 +17,11 @@ public class Launcher extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launcher);
-        ObjectAnimator animator = new ObjectAnimator();
+        ImageView image = (ImageView) findViewById(R.id.launcher_image_car);
+        PropertyValuesHolder xScale = PropertyValuesHolder.ofFloat(View.SCALE_X, 1, 5);
+        PropertyValuesHolder yScale = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1, 5);
+        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(image, xScale, yScale);
+        //ObjectAnimator animator = new ObjectAnimator(image, );
     }
 
 
