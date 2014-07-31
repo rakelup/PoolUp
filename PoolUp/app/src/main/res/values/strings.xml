@@ -4,5 +4,8 @@
     <string name="app_name">PoolUp</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="main_driver_title">Driver</string>
+    <string name="main_passenger_title">Driver</string>
 
 </resources>
