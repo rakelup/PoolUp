@@ -12,21 +12,38 @@
     android:layout_marginRight="30dp"
     tools:context="poolup.penguins.chocolate.com.poolup.MainActivity$PlaceholderFragment">
 
-    <Button
-        android:layout_width="fill_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/main_driver_title"
-        android:layout_marginBottom="20dp"
-        android:textColor="#ffffff"
-        android:background="#8CC739"
-        />
+        android:orientation="vertical"
+        android:layout_gravity="center">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/main_passenger_title"
-        android:textColor="#ffffff"
-        android:background="#21BEDE"/>
+        <Button
+            android:id="@+id/main_btn_driver"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_driver_title"
+            android:layout_marginBottom="20dp"
+            android:textColor="#ffffff"
+            android:background="#8CC739"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:onClick="createPool"
+            />
+
+        <Button
+            android:id="@+id/main_btn_passenger"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_passenger_title"
+            android:textColor="#ffffff"
+            android:background="#21BEDE"
+            android:paddingLeft="50dp"
+            android:paddingRight="50dp"
+            android:onClick="searchRoutes"/>
+
+        </LinearLayout>
+
 
 
 </LinearLayout>
