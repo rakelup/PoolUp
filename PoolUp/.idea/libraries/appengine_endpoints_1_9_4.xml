@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="appengine-endpoints-1.9.4">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.appengine/appengine-endpoints/1.9.4/9deecf6ce19f34c3b56004f66a66bb114c8db23f/appengine-endpoints-1.9.4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
