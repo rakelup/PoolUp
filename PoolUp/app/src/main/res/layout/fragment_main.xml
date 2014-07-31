@@ -29,6 +29,8 @@
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
             android:onClick="createPool"
+            android:textSize="30dp"
+            android:drawableLeft="@drawable/car_driver"
             />
 
         <Button
@@ -40,7 +42,10 @@
             android:background="#21BEDE"
             android:paddingLeft="50dp"
             android:paddingRight="50dp"
-            android:onClick="searchRoutes"/>
+            android:onClick="searchRoutes"
+            android:drawableLeft="@drawable/passenger_256"
+            android:textSize="30dp"
+            />
 
         </LinearLayout>
 
