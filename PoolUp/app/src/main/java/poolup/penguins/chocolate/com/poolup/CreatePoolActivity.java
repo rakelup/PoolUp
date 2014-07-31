@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import com.google.android.gms.maps.*;
+import com.google.android.gms.maps.model.*;
 
 import poolup.penguins.chocolate.com.poolup.R;
 
@@ -19,11 +21,24 @@ public class CreatePoolActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_pool);
-        if (savedInstanceState == null) {
-            getFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
+//        if (savedInstanceState == null) {
+//            getFragmentManager().beginTransaction()
+//                    .add(R.id.container, new PlaceholderFragment())
+//                    .commit();
+//        }
+       // Get a handle to the Map Fragment
+        GoogleMap map = ((MapFragment) getFragmentManager()
+                .findFragmentById(R.id.map)).getMap();
+
+       LatLng sydney = new LatLng(-33.867, 151.206);
+
+       map.setMyLocationEnabled(true);
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
+
+       map.addMarker(new MarkerOptions()
+                .title("Sydney")
+               .snippet("The most populous city in Australia.")
+                .position(sydney));
     }
 
 
