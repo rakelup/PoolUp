@@ -12,5 +12,5 @@
     <string name="title_activity_matching_routes">MatchingRoutesActivity</string>
     <string name="title_activity_matching_pools">MatchingPoolsActivity</string>
     <string name="title_activity_search_pool">SearchPoolActivity</string>
-
+    <string name="pick_time">Pick Time</string>
 </resources>

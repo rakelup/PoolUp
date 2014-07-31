@@ -26,22 +26,37 @@
             android:layout_height="0dp"
             android:layout_weight="1">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/hello_world"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_time"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fadingEdge="horizontal"
+                    android:clickable="true"
+                    android:textSize="30dp"
+                    android:onClick="showDatePickerDialog"
+                    android:id="@+id/create_tv_date"
+                    android:layout_marginRight="10dp"/>
+
+                <TextView
+                    android:id="@+id/create_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="30dp"
+                    android:clickable="true"
+                    android:onClick="showTimePickerDialog" />
+                </LinearLayout>
 
             </RelativeLayout>
 
-
-
-
-
-
         </LinearLayout>
-
-
-
-
 
 </RelativeLayout>
