@@ -16,6 +16,9 @@ import com.google.android.gms.maps.model.*;
 import poolup.penguins.chocolate.com.poolup.R;
 
 public class CreatePoolActivity extends Activity {
+    GoogleMap map;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,18 +30,12 @@ public class CreatePoolActivity extends Activity {
 //                    .commit();
 //        }
        // Get a handle to the Map Fragment
-        GoogleMap map = ((MapFragment) getFragmentManager()
+        map = ((MapFragment) getFragmentManager()
                 .findFragmentById(R.id.map)).getMap();
 
-       LatLng sydney = new LatLng(-33.867, 151.206);
+        MapController mapController=new MapController(map);
 
-       map.setMyLocationEnabled(true);
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 13));
 
-       map.addMarker(new MarkerOptions()
-                .title("Sydney")
-               .snippet("The most populous city in Australia.")
-                .position(sydney));
     }
 
 
@@ -61,6 +58,10 @@ public class CreatePoolActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+
+
+
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -76,4 +77,6 @@ public class CreatePoolActivity extends Activity {
             return rootView;
         }
     }
+
+
 }
