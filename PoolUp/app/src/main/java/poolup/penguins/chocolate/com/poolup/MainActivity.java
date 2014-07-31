@@ -67,4 +67,9 @@ public class MainActivity extends Activity {
         Intent createPoolIntent = new Intent(this, CreatePoolActivity.class);
         startActivity(createPoolIntent);
     }
+
+    public void searchRoutes(View view) {
+        Intent searchPoolIntent = new Intent(this, SearchPoolActivity.class);
+        startActivity(searchPoolIntent);
+    }
 }
