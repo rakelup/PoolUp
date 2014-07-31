@@ -1,5 +1,6 @@
 package poolup.penguins.chocolate.com.poolup;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Activity;
@@ -10,11 +11,16 @@ import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AnimationSet;
+import android.view.animation.BounceInterpolator;
+import android.view.animation.Interpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.ImageView;
 
 
 public class Launcher extends Activity {
-    private static final int SPLASH_TIME_OUT = 3000;
+    private static final int SPLASH_TIME_OUT = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +44,24 @@ public class Launcher extends Activity {
             }
         }, SPLASH_TIME_OUT);
 
+        AnimatorSet animatorSet = new AnimatorSet();
         ImageView image = (ImageView) findViewById(R.id.launcher_image_car);
-        PropertyValuesHolder xScale = PropertyValuesHolder.ofFloat(View.SCALE_X, 1, 10);
-        PropertyValuesHolder yScale = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1, 10);
-        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(image, xScale, yScale);
-        animator.setDuration(2000);
-        animator.start();
+        PropertyValuesHolder xScale = PropertyValuesHolder.ofFloat(View.SCALE_X, 1, 12);
+        PropertyValuesHolder yScale = PropertyValuesHolder.ofFloat(View.SCALE_Y, 1, 12);
+        PropertyValuesHolder yMove = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 10, 280);
+        ObjectAnimator animator = ObjectAnimator.ofPropertyValuesHolder(image, xScale, yScale, yMove);
+        animator.setInterpolator(new AccelerateInterpolator());
+        animator.setDuration(2800);
+
+        PropertyValuesHolder xxScale = PropertyValuesHolder.ofFloat(View.SCALE_X, 12, 15);
+        PropertyValuesHolder yyScale = PropertyValuesHolder.ofFloat(View.SCALE_Y, 12, 15);
+        PropertyValuesHolder yyMove = PropertyValuesHolder.ofFloat(View.TRANSLATION_Y, 280, 300);
+        ObjectAnimator overshootAnimator = ObjectAnimator.ofPropertyValuesHolder(image, xxScale, yyScale, yyMove);
+        overshootAnimator.setInterpolator(new OvershootInterpolator());
+        overshootAnimator.setDuration(500);
+
+        animatorSet.playSequentially(animator, overshootAnimator);
+        animatorSet.start();
     }
 
 
@@ -66,3 +84,5 @@ public class Launcher extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
+
+
