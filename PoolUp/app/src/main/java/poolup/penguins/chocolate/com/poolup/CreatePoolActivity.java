@@ -3,6 +3,7 @@ package poolup.penguins.chocolate.com.poolup;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -16,25 +17,17 @@ import com.google.android.gms.maps.model.*;
 import poolup.penguins.chocolate.com.poolup.R;
 
 public class CreatePoolActivity extends Activity {
-    GoogleMap map;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_pool);
-//        if (savedInstanceState == null) {
-//            getFragmentManager().beginTransaction()
-//                    .add(R.id.container, new PlaceholderFragment())
-//                    .commit();
-//        }
-       // Get a handle to the Map Fragment
-        map = ((MapFragment) getFragmentManager()
-                .findFragmentById(R.id.map)).getMap();
-
-        MapController mapController=new MapController(map);
-
+        if (savedInstanceState == null) {
+            getFragmentManager().beginTransaction()
+                    .add(R.id.container, new PlaceholderFragment())
+                    .commit();
+        }
 
     }
 
@@ -67,13 +60,22 @@ public class CreatePoolActivity extends Activity {
      */
     public static class PlaceholderFragment extends Fragment {
 
+        MapController mapController;
+
         public PlaceholderFragment() {
         }
+
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_create_pool, container, false);
+            // Get a handle to the Map Fragment
+            GoogleMap map;
+            map = ((MapFragment) getFragmentManager()
+                    .findFragmentById(R.id.map)).getMap();
+
+            mapController = new MapController(map);
             return rootView;
         }
     }
