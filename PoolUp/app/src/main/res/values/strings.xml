@@ -15,6 +15,11 @@
     <string name="pick_time">Pick Time</string>
     <string name="seat">Seats</string>
     <string name="price">Price</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="telephone">Telephone</string>
+    <string name="login_title">Please confirm password!</string>
+
 
     <string-array name="costs">
         <item>free</item>

@@ -224,8 +224,8 @@ public class CreatePoolActivity extends Activity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view = inflater.inflate(R.layout.fragment_login, container);
-            mEditText = (EditText) view.findViewById(R.id.login_name);
-            getDialog().setTitle("Login");
+            mEditText = (EditText) view.findViewById(R.id.login_et_password);
+            getDialog().setTitle("Please confirm password!");
 
             return view;
         }
