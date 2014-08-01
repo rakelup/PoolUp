@@ -109,7 +109,7 @@ public class CreatePoolActivity extends Activity {
 
         public void onDateSet(DatePicker view, int year, int month, int day) {
             // Do something with the date chosen by the user
-            ((TextView) getActivity().findViewById(R.id.create_tv_date)).setText(convertToDate(year, month, day));
+           ((TextView) getActivity().findViewById(R.id.create_tv_date)).setText(convertToDate(year, month, day));
         }
     }
 

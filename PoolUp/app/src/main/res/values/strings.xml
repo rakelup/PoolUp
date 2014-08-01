@@ -13,7 +13,7 @@
     <string name="title_activity_matching_pools">MatchingPoolsActivity</string>
     <string name="title_activity_search_pool">SearchPoolActivity</string>
     <string name="pick_time">Pick Time</string>
-    <string name="seats">Seats</string>
+    <string name="seat">Seats</string>
     <string name="price">Price</string>
     <string-array name="costs">
         <item>free</item>
