@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.format.Time;
 import android.view.LayoutInflater;
@@ -88,9 +89,9 @@ public class MatchingPoolsActivity extends Activity {
                 routes = new ArrayList<Route>();
                 Time t = new Time();
                 t.setToNow();
-                routes.add(new Route("Brit",3,20, t, new LatLng(1,1), new LatLng(2,2)));
+                routes.add(new Route("Brit",3,20, 1, 3, 3, 12, 23, new LatLng(1,1), new LatLng(2,2)));
                 t.set(0,1,2,3,4,5);
-                routes.add(new Route("Hanna",2,20, t, new LatLng(1,1), new LatLng(2,2)));
+                routes.add(new Route("Hanna",2,20, 3, 2, 1, 23, 12, new LatLng(1,1), new LatLng(2,2)));
             }
 
 
@@ -116,20 +117,24 @@ public class MatchingPoolsActivity extends Activity {
                     layout.setOrientation(LinearLayout.VERTICAL);
 
                     TextView timeView = new TextView(parent.getContext());
-                    timeView.setText("Departure Time: " + String.format("%02d",currRoute.getDepature().MONTH_DAY) + "/" + String.format("%02d",currRoute.getDepature().MONTH) + " " + String.format("%02d",currRoute.getDepature().HOUR) + ":" + String.format("%02d",currRoute.getDepature().MINUTE));
-                    timeView.setTextSize(20);
-                    timeView.setTextColor(Color.WHITE);
+                    timeView.setText(String.format("%02d",currRoute.getDepatureDate()) + "/" + String.format("%02d",currRoute.getDepatureMonth()) + "/" + currRoute.getDepatureYear() + " " + String.format("%02d",currRoute.getDepatureHour()) + ":" + String.format("%02d",currRoute.getDepatureMinute()));
+                    timeView.setTextSize(18);
+                    timeView.setTypeface(null, Typeface.BOLD);
+                    timeView.setTextColor(Color.DKGRAY);
                     layout.addView(timeView);
-
-                    TextView priceView = new TextView(parent.getContext());
-                    priceView.setText("Price: " + currRoute.getPrice() + "$");
-                    priceView.setTextSize(20);
-                    priceView.setTextColor(Color.WHITE);
-                    layout.addView(priceView);
 
                     TextView driverView = new TextView(parent.getContext());
                     driverView.setText("Driver: " + currRoute.getDriver());
+                    driverView.setTextSize(18);
+                    driverView.setTextColor(Color.DKGRAY);
                     layout.addView(driverView);
+
+                    TextView priceView = new TextView(parent.getContext());
+                    priceView.setText("Price: " + currRoute.getPrice() + "$");
+                    priceView.setTextSize(18);
+                    priceView.setTextColor(Color.DKGRAY);
+                    layout.addView(priceView);
+
                 }
                 else {
                     layout = (LinearLayout) convertView;

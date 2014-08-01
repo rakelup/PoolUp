@@ -9,9 +9,9 @@
     <string name="main_passenger_title">Passenger</string>
     <string name="title_activity_create_pool">Create Pool</string>
     <string name="title_create_pool">Create Pool</string>
-    <string name="title_activity_matching_routes">MatchingRoutesActivity</string>
-    <string name="title_activity_matching_pools">MatchingPoolsActivity</string>
-    <string name="title_activity_search_pool">SearchPoolActivity</string>
+    <string name="title_activity_matching_pools">Matching Pools</string>
+    <string name="title_activity_matching_routes">Matching Routes</string>
+    <string name="title_activity_search_pool">Find Pool</string>
     <string name="pick_time">Pick Time</string>
     <string name="seat">Seats</string>
     <string name="price">Price</string>
@@ -60,5 +60,6 @@
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+>>>>>>> fe7fb5f9eddd3e97cd874e9492ed934dedebc5ac
 
 </resources>
