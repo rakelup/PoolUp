@@ -50,6 +50,14 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+    <string-array name="distances">
+        <item>250 m</item>
+        <item>500 m</item>
+        <item>750 m</item>
+        <item>1000 m</item>
+        <item>1500 m</item>
+    </string-array>
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

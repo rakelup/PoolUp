@@ -8,12 +8,140 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="poolup.penguins.chocolate.com.poolup.SearchPoolActivity$PlaceholderFragment">
 
-    <Button
-        android:id="@+id/search_pool_btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:onClick="searchPool">
-        </Button>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="2"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:name="com.google.android.gms.maps.MapFragment"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        ]        <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/create_ll_labels"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_time"
+                    android:textAlignment="center"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:text="Walking Distance"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="15dp"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1.5"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:fadingEdge="horizontal"
+                    android:paddingRight="3dp"
+                    android:paddingLeft="3dp"
+                    android:clickable="true"
+                    android:textSize="20dp"
+                    android:textAlignment="center"
+                    android:onClick="showDatePickerDialog"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/create_tv_date"
+                    android:layout_marginRight="10dp"/>
+
+                <Spinner
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:layout_marginRight="10dp"
+
+                    android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    android:entries="@array/distances">
+                </Spinner>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5">
+                <EditText
+                    android:id="@+id/create_tv_time"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="3dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="20dp"
+                    android:clickable="true"
+                    android:layout_marginTop="15dp"
+                    android:textAlignment="center"
+                    android:onClick="showTimePickerDialog" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:onClick="searchPool"
+            android:layout_marginTop="25dp"
+            android:textColor="@android:color/white"
+            android:background="@android:color/holo_green_dark"
+            android:layout_below="@+id/create_ll_labels"/>
+    </RelativeLayout>
+
+    </LinearLayout>
 
 </RelativeLayout>
