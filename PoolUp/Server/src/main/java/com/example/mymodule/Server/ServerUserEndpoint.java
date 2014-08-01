@@ -3,10 +3,13 @@ package com.example.mymodule.Server;
 import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
+import com.google.api.server.spi.response.CollectionResponse;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Named;
+import static com.example.mymodule.Server.OfyService.ofy;
 
 /** An endpoint class we are exposing */
 @Api(name = "serverUserEndpoint", version = "v1", namespace = @ApiNamespace(ownerDomain = "Server.mymodule.example.com", ownerName = "Server.mymodule.example.com", packagePath=""))
@@ -21,7 +24,7 @@ public class ServerUserEndpoint {
      * @param id The id of the object to be returned.
      * @return The <code>ServerUser</code> associated with <code>id</code>.
      */
-    @ApiMethod(name = "getServerUser")
+    @ApiMethod(name = "getServerUser", path="user/get")
     public ServerUser getServerUser(@Named("id") Long id) {
         // Implement this function
 
@@ -35,10 +38,15 @@ public class ServerUserEndpoint {
      * @return The object to be added.
      */
     @ApiMethod(name = "insertServerUser")
-    public ServerUser insertServerUser(ServerUser serverUser) {
+    public void insertServerUser(ServerUser serverUser) {
         // Implement this function
-
+        ofy().save().entity(serverUser).now();
         LOG.info("Calling insertServerUser method");
-        return serverUser;
+    }
+
+    @ApiMethod(name = "listUsers", path="user/list")
+    public CollectionResponse<ServerUser> listDevices(@Named("count") int count) {
+        List<ServerUser> users = ofy().load().type(ServerUser.class).limit(count).list();
+        return CollectionResponse.<ServerUser>builder().setItems(users).build();
     }
 }
