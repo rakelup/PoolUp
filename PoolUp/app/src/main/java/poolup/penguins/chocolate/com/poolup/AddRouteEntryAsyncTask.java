@@ -34,7 +34,7 @@ public class AddRouteEntryAsyncTask<T> extends AsyncTask<Route, Void, Void> {
                 new AndroidJsonFactory(),null);
 
         endpoint = builder.build();
-        endpoint.insertServerUser(null).execute();
+        //endpoint.insertServerUser(null).execute();
 
 
 
