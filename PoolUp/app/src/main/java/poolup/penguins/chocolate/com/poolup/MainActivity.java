@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.example.mymodule.server.serverRouteEndpoint.model.ServerRoute;
+import com.google.android.gms.maps.model.LatLng;
+
 import poolup.penguins.chocolate.com.poolup.R;
 
 public class MainActivity extends Activity {
