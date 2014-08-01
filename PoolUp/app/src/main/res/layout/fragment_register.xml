@@ -44,7 +44,6 @@
             android:layout_width="fill_parent"
             android:background="@android:color/holo_green_dark"
             android:layout_height="wrap_content"
-            android:onClick="register"
             android:id="@+id/login_btn"
             android:gravity="center"
             android:textColor="@android:color/white"

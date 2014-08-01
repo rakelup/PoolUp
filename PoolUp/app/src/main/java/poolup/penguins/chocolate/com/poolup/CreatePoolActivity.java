@@ -22,6 +22,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.*;
 import com.google.android.gms.maps.model.*;
@@ -38,6 +39,21 @@ public class CreatePoolActivity extends Activity {
 
     public static boolean getRegistrationStatus() {
         return mIsRegistered;
+    }
+
+    public static void setmIsRegistered(boolean value) {
+        mIsRegistered = value;
+    }
+
+    public void register(View view) {
+        String text = new String("Car Pool saved!");
+       // Toast.makeText(, text, Toast.LENGTH_LONG);
+        CreatePoolActivity.setmIsRegistered(true);
+    }
+
+    public void login(View view) {
+        String text = new String("Car Pool saved!");
+      //  Toast.makeText(view.getContext(), text, Toast.LENGTH_LONG);
     }
 
     public static String convertToHour(int hourOfDay, int minute) {
@@ -125,6 +141,7 @@ public class CreatePoolActivity extends Activity {
 
         LoginDialog loginDialog = new LoginDialog();
         loginDialog.show(this.getFragmentManager(), "fragment_login");
+
     }
 
     @Override
@@ -174,7 +191,7 @@ public class CreatePoolActivity extends Activity {
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment {
+    public static class PlaceholderFragment extends Fragment  {
 
         MapController mapController;
 
@@ -214,6 +231,7 @@ public class CreatePoolActivity extends Activity {
 
             return rootView;
         }
+
 
     }
 
