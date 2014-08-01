@@ -206,14 +206,17 @@ public class CreatePoolActivity extends Activity {
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_create_pool, container, false);
             // Get a handle to the Map Fragment
-            GoogleMap map;
+                        GoogleMap map;
             map = ((MapFragment) getFragmentManager()
                     .findFragmentById(R.id.map)).getMap();
 
             LatLng loc=new LatLng(51.4926, -0.144);
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
 
+
+
             mapController = new MapController(map);
+
 
             // set set current time
             Calendar c = Calendar.getInstance();

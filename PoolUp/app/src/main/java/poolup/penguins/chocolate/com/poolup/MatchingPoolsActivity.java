@@ -7,12 +7,14 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -31,6 +33,7 @@ public class MatchingPoolsActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matching_pools);
+        Log.d("MAPS", "creando MatchingPoolsActivity");
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction()
                     .add(R.id.container, new PlaceholderFragment())
@@ -76,11 +79,38 @@ public class MatchingPoolsActivity extends Activity {
             RoutesAdapter adapter = new RoutesAdapter();
             ListView listView = (ListView) rootView.findViewById(R.id.matching_pools_listview);
             listView.setAdapter(adapter);
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    showRoute(view);
 
-            return rootView;
+                }
+            });
+
+
+
+
+
+
+
+
+
+          return rootView;
         }
 
 
+        public void showRoute(View view) {
+
+                ShowRouteDialog showRouteDialog = new ShowRouteDialog();
+            Bundle args = new Bundle();
+
+            args.putDouble("SOURCE_LAT", 50);
+            args.putDouble("SOURCE_LONG", 51);
+            args.putDouble("DEST_LAT", 50.05);
+            args.putDouble("DEST_LONG", 51.07);
+            showRouteDialog.setArguments(args);
+                showRouteDialog.show(this.getFragmentManager(), "fragment_show_route");
+            }
         private class RoutesAdapter extends BaseAdapter {
 
             private ArrayList<Route> routes;
@@ -94,10 +124,11 @@ public class MatchingPoolsActivity extends Activity {
                 routes.add(new Route("Hanna",2,20, 3, 2, 1, 23, 12, new LatLng(1,1), new LatLng(2,2)));
             }
 
-
             public int getCount() {
                 return routes.size();
             }
+
+
 
             public Route getItem(int position) {
                 return routes.get(position);

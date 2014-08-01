@@ -7,12 +7,13 @@ import android.widget.Toast;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
  * Created by demouser on 7/31/14.
  */
-public class MapController {
+public class MapController implements GoogleMap.OnMarkerDragListener {
 
     private final GoogleMap mMap;
     private Boolean mIsOriginSet = false;
@@ -20,12 +21,16 @@ public class MapController {
     private LatLng mOrigin;
     private LatLng mDestination;
 
+
     private final GoogleMap.OnMapClickListener mapListener = new GoogleMap.OnMapClickListener(){
         public void addMarker(View view) {
             Log.d("MAPS", "MapController addMarker");
             mMap.addMarker(new MarkerOptions().position(
                     new LatLng(mMap.getCameraPosition().target.latitude,
                             mMap.getCameraPosition().target.longitude)));
+
+
+
 
         }
 
@@ -36,18 +41,26 @@ public class MapController {
 
             if (mIsOriginSet ==false) {
                 Log.d("MAPS", "origin");
-                mMap.addMarker(new MarkerOptions().position(point).
-                        icon(BitmapDescriptorFactory
+
+                Marker origin= mMap.addMarker(new MarkerOptions().position(point)
+                        .title("ORIGIN")
+                        .snippet("Origin")
+                        .icon(BitmapDescriptorFactory
                                 .defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+
+
                 mOrigin=point;
                 mIsOriginSet =true;
 
             }
             else if (!mIsDestinationSet){
                 Log.d("MAPS", " destination");
-                mMap.addMarker(new MarkerOptions().position(point).
-                        icon(BitmapDescriptorFactory
-                                .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
+
+                Marker dest= mMap.addMarker(new MarkerOptions().position(point)
+                        .title("DESTINATION")
+                        .snippet("Destination")
+                        .icon(BitmapDescriptorFactory
+                                .defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
                 mDestination = point;
                 mIsDestinationSet = true;
 
@@ -55,6 +68,8 @@ public class MapController {
         }
 
     };
+
+
 
     public LatLng getOrigin() {
         return this.mOrigin;
@@ -72,9 +87,22 @@ public class MapController {
         Log.d("MAPS", "MapController constructor");
     }
 
+    @Override
+    public void onMarkerDragStart(Marker marker) {
+
+    }
+
+    @Override
+    public void onMarkerDrag(Marker marker) {
+
+    }
+
+    @Override
+    public void onMarkerDragEnd(Marker marker) {
 
 
 
+    }
 
 
 //
