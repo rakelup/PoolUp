@@ -21,6 +21,15 @@
         android:icon="@drawable/car_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <receiver
+            android:name=".GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="poolup.penguins.chocolate.com.poolup" />
+            </intent-filter>
+        </receiver>
+        <service android:name=".GcmIntentService" />
         <activity
             android:name=".Launcher"
             android:label="@string/app_name" >
@@ -61,12 +70,12 @@
     </application>
 
     <permission
-        android:name="com.example.gcm.permission.C2D_MESSAGE"
+        android:name="poolup.penguins.chocolate.com.poolup.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-    <uses-permission android:name="com.example.gcm.permission.C2D_MESSAGE" />
+    <uses-permission android:name="poolup.penguins.chocolate.com.poolup.permission.C2D_MESSAGE" />
 
 </manifest>

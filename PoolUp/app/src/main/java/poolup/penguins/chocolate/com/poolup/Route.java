@@ -17,18 +17,27 @@ public class Route {
     private String mDriver;
     private int mAvailableSeats;
     private int mPrice;
-    private Time mDepature;
+    private int mDepatureYear;
+    private int mDepatureMonth;
+    private int mDepatureDate;
+    private int mDepatureHour;
+    private int mDepatureMinute;
     private LatLng mStartPoint;
     private LatLng mEndPoint;
     private ArrayList<String> mPassengers;
 
-    public Route(String driver, int availableSeats, int price, Time departure, LatLng startPoint, LatLng endPoint){
+    public Route(String driver, int availableSeats, int price, int departureYear, int departureMonth,
+                 int departureDate, int departureHour, int departureMinute, LatLng startPoint, LatLng endPoint){
         mId = mIdCounter;
         mIdCounter++;
         mDriver = driver;
         mAvailableSeats = availableSeats;
         mPrice = price;
-        mDepature = departure;
+        mDepatureYear = departureYear;
+        mDepatureMonth = departureMonth;
+        mDepatureDate = departureDate;
+        mDepatureHour = departureHour;
+        mDepatureMinute = departureMinute;
         mStartPoint = startPoint;
         mEndPoint = endPoint;
         mPassengers = new ArrayList<String>();
@@ -64,8 +73,24 @@ public class Route {
         return mPrice;
     }
 
-    public Time getDepature() {
-        return mDepature;
+    public int getDepatureYear() {
+        return mDepatureYear;
+    }
+
+    public int getDepatureMonth() {
+        return mDepatureMonth;
+    }
+
+    public int getDepatureDate() {
+        return mDepatureDate;
+    }
+
+    public int getDepatureHour() {
+        return mDepatureHour;
+    }
+
+    public int getDepatureMinute() {
+        return mDepatureMinute;
     }
 
     public LatLng getStartPoint() {

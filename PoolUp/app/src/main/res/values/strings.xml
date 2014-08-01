@@ -10,7 +10,7 @@
     <string name="title_activity_create_pool">Create Pool</string>
     <string name="title_create_pool">Create Pool</string>
     <string name="title_activity_matching_routes">MatchingRoutesActivity</string>
-    <string name="title_activity_matching_pools">MatchingPoolsActivity</string>
-    <string name="title_activity_search_pool">SearchPoolActivity</string>
+    <string name="title_activity_matching_pools">Matching Pools</string>
+    <string name="title_activity_search_pool">Find Pool</string>
 
 </resources>

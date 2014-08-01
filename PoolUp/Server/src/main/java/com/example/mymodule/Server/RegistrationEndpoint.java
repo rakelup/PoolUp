@@ -57,6 +57,7 @@ public class RegistrationEndpoint {
         ofy().delete().entity(record).now();
     }
 
+
     /**
      * Return a collection of registered devices
      *
