@@ -15,6 +15,7 @@
     <string name="pick_time">Pick Time</string>
     <string name="seat">Seats</string>
     <string name="price">Price</string>
+
     <string-array name="costs">
         <item>free</item>
         <item>1 £</item>
@@ -37,13 +38,14 @@
         <item>18 £</item>
         <item>19 £</item>
         <item>20 £</item>
-
     </string-array>
-
     <string-array name="seats">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

@@ -15,7 +15,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapController {
 
     private final GoogleMap mMap;
-    private Boolean mIsOriginSet=false;
+    private Boolean mIsOriginSet = false;
+    private Boolean mIsDestinationSet = false;
     private LatLng mOrigin;
     private LatLng mDestination;
 
@@ -42,23 +43,26 @@ public class MapController {
                 mIsOriginSet =true;
 
             }
-            else {
+            else if (!mIsDestinationSet){
                 Log.d("MAPS", " destination");
                 mMap.addMarker(new MarkerOptions().position(point).
                         icon(BitmapDescriptorFactory
                                 .defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
                 mDestination = point;
+                mIsDestinationSet = true;
 
             }
         }
 
-        //public void showLocation
-
-
-
-
-
     };
+
+    public LatLng getOrigin() {
+        return this.mOrigin;
+    }
+
+    public LatLng getDestination() {
+        return this.mDestination;
+    }
 
     public MapController(GoogleMap map)
     {

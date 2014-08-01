@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.os.Build;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
@@ -69,6 +70,7 @@ public class CreatePoolActivity extends Activity {
 
     }
 
+
     public static class TimePickerFragment extends DialogFragment
             implements TimePickerDialog.OnTimeSetListener {
 
@@ -113,6 +115,11 @@ public class CreatePoolActivity extends Activity {
         }
     }
 
+    public void showLoginDialog(View view) {
+
+        LoginDialog loginDialog = new LoginDialog();
+        loginDialog.show(this.getFragmentManager(), "fragment_login");
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,6 +185,9 @@ public class CreatePoolActivity extends Activity {
             map = ((MapFragment) getFragmentManager()
                     .findFragmentById(R.id.map)).getMap();
 
+            LatLng loc=new LatLng(51.4926, -0.144);
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15));
+
             mapController = new MapController(map);
 
             // set set current time
@@ -201,5 +211,24 @@ public class CreatePoolActivity extends Activity {
 
     }
 
+    // LOGIN LOGIC
+    public static class LoginDialog extends DialogFragment {
+
+        private EditText mEditText;
+
+        public LoginDialog() {
+        // Empty constructor required for DialogFragment
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View view = inflater.inflate(R.layout.fragment_login, container);
+            mEditText = (EditText) view.findViewById(R.id.login_name);
+            getDialog().setTitle("Login");
+
+            return view;
+        }
+    }
 
 }
