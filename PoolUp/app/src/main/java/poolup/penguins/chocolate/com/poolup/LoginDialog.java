@@ -2,7 +2,9 @@ package poolup.penguins.chocolate.com.poolup;
 
 import android.app.DialogFragment;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +15,13 @@ import android.widget.Toast;
 
 // LOGIN LOGIC
 public class LoginDialog extends DialogFragment {
+    public static final String PREFS_NAME = "MyPrefsFile";
 
     private EditText mEditText;
     private LoginDialog mdialog = this;
     public LoginDialog() {
         // Empty constructor required for DialogFragment
+
     }
 
 
@@ -33,7 +37,7 @@ public class LoginDialog extends DialogFragment {
             ((Button)view.findViewById(R.id.login_btn)).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Toast.makeText(view.getContext(), "Created car pool!",Toast.LENGTH_LONG);
                     mdialog.dismiss();
                 }
             });
@@ -44,6 +48,7 @@ public class LoginDialog extends DialogFragment {
                 @Override
                 public void onClick(View v) {
                     CreatePoolActivity.setmIsRegistered(true);
+                    Toast.makeText(view.getContext(), "Created car pool!",Toast.LENGTH_LONG);
                     mdialog.dismiss();
                 }
             });
