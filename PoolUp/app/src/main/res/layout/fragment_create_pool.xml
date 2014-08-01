@@ -246,10 +246,11 @@
                 android:layout_below="@+id/create_ll_seats"
                 />-->
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Create Pool"
             android:onClick="showLoginDialog"
+            android:background="@android:color/holo_green_dark"
             android:layout_below="@+id/create_ll_labels"
             />
             </RelativeLayout>

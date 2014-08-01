@@ -34,6 +34,12 @@ import poolup.penguins.chocolate.com.poolup.R;
 
 public class CreatePoolActivity extends Activity {
 
+    protected static boolean mIsRegistered = false;
+
+    public static boolean getRegistrationStatus() {
+        return mIsRegistered;
+    }
+
     public static String convertToHour(int hourOfDay, int minute) {
 
         String hourString;
@@ -211,24 +217,6 @@ public class CreatePoolActivity extends Activity {
 
     }
 
-    // LOGIN LOGIC
-    public static class LoginDialog extends DialogFragment {
 
-        private EditText mEditText;
-
-        public LoginDialog() {
-        // Empty constructor required for DialogFragment
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View view = inflater.inflate(R.layout.fragment_login, container);
-            mEditText = (EditText) view.findViewById(R.id.login_et_password);
-            getDialog().setTitle("Please confirm password!");
-
-            return view;
-        }
-    }
 
 }

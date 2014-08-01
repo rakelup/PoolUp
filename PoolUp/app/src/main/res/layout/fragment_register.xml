@@ -1,0 +1,56 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="poolup.penguins.chocolate.com.poolup.RegisterFragment">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:weightSum="2"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="User Name"
+            android:id="@+id/register_et_name"
+
+            />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:hint="Telephone"
+            android:id="@+id/register_et_telephone"
+            />
+
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/register_et_password"
+            android:hint="@string/password"
+            android:password="true"
+            android:layout_weight="0.5"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_weight="0.5"
+            android:width="250dp"
+            android:layout_width="wrap_content"
+            android:background="@android:color/holo_green_dark"
+            android:layout_height="wrap_content"
+            android:onClick="login"
+            android:id="@+id/login_btn"
+            android:textColor="@android:color/white"
+            android:text="Login"
+            android:layout_below="@+id/register_et_password"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>
