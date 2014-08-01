@@ -28,32 +28,98 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/create_ll_picktime"
+                android:layout_marginRight="5dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pick_time"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/holo_blue_dark"
                     android:layout_marginRight="10dp"/>
 
-                <TextView
+                <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fadingEdge="horizontal"
+                    android:paddingRight="3dp"
+                    android:paddingLeft="3dp"
                     android:clickable="true"
-                    android:textSize="30dp"
+                    android:textSize="20dp"
                     android:onClick="showDatePickerDialog"
                     android:id="@+id/create_tv_date"
                     android:layout_marginRight="10dp"/>
 
-                <TextView
+                <EditText
                     android:id="@+id/create_tv_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:textSize="30dp"
+                    android:paddingRight="3dp"
+                    android:paddingLeft="3dp"
+                    android:textSize="20dp"
                     android:clickable="true"
                     android:onClick="showTimePickerDialog" />
                 </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_below="@+id/create_ll_picktime"
+                android:id="@+id/create_ll_price"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/holo_green_dark"
+                    android:layout_marginRight="10dp"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:entries="@array/costs">
+                    </Spinner>
+
+                </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/create_ll_seats"
+                android:layout_below="@+id/create_ll_price">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/price"
+                    android:textSize="25dp"
+                    android:textColor="@android:color/holo_blue_dark"
+                    android:layout_marginRight="10dp"/>
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawSelectorOnTop="true"
+                    android:entries="@array/seats">
+                </Spinner>
+
+                </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Pool"
+                android:layout_below="@+id/create_ll_seats"
+                android:onClick="showLoginDialog"
+                />
 
             </RelativeLayout>
 
