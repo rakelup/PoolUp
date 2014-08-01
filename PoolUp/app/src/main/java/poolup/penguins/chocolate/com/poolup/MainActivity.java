@@ -75,4 +75,5 @@ public class MainActivity extends Activity {
         Intent searchPoolIntent = new Intent(this, SearchPoolActivity.class);
         startActivity(searchPoolIntent);
     }
+
 }
